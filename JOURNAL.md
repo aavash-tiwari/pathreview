@@ -10,3 +10,10 @@ This issue occurs in the backend ingestion pipeline where the system scans docum
 **Branch name:** fix/148-skill-extractor-js-ts
 **Setup confirmation:** (X) App runs locally at localhost:5173
 **Cohort ledger:** (X) Issue added to cohort ledger
+
+**Selection Notes ("Is this right for me?" Checklist):**
+* **Is it actually open?** Yes, the issue is currently open. While there are 2 linked PRs, the project guidelines state claims are not exclusive, so I can review those PRs to see what approaches might have failed or what my peers are doing.
+* **Is the scope clear?** Yes, it clearly specifies the exact two languages (JavaScript and TypeScript) that are failing to extract.
+* **Is it the right size?** Yes, as a Tier 1 issue, it is highly isolated to just the ingestion module.
+* **Is the maintainer active?** Yes, the issue was recently opened by a maintainer and the thread is active.
+* **Does it match where you are?** Yes, string matching and keyword extraction in Python aligns perfectly with my current development skills.
