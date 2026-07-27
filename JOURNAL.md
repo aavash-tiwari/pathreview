@@ -17,4 +17,14 @@ This issue occurs in the backend ingestion pipeline where the system scans docum
 * **Is it the right size?** Yes, as a Tier 1 issue, it is highly isolated to just the ingestion module.
 * **Is the maintainer active?** Yes, the issue was recently opened by a maintainer and the thread is active.
 * **Does it match where you are?** Yes, string matching and keyword extraction in Python aligns perfectly with my current development skills.
-**Issue Reproduction Confirmed:** I ran the ingestion pipeline locally and input a test document containing the words "JavaScript" and "TypeScript". The resulting parsed output failed to extract either language as a skill, confirming the bug exists in my local environment.
+
+## Week 8 Reproduction & solution planning
+
+**Reproduction commit link:** https://github.com/aavash-tiwari/pathreview/commits/fix/148-skill-extractor-js-ts
+**Reproduction summary:**
+I successfully reproduced the issue by tracing the ingestion pipeline's behavior. When processing a test string containing "JavaScript" and "TypeScript", the extractor dropped both languages, confirming the keyword mapping is missing locally.
+
+**PLAN.md link:** https://github.com/aavash-tiwari/pathreview/blob/fix/148-skill-extractor-js-ts/PLAN.md
+**Walkthrough video (recommended):** N/A
+**Blockers or open questions:**
+None at this time. The scope is well-defined and isolated to the ingestion module.
