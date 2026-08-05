@@ -28,3 +28,25 @@ I successfully reproduced the issue by tracing the ingestion pipeline's behavior
 **Walkthrough video (recommended):** N/A
 **Blockers or open questions:**
 None at this time. The scope is well-defined and isolated to the ingestion module.
+
+## Week 9 Solution building & PR submission
+
+### Check-in 1 (mid-week)
+**Current progress:**
+I have mapped out `ingestion/parsers/skill_extractor.py` and identified that the language detection logic lumps JS and TS together. I have completed the sub-tasks to locate the regex mapping and plan the separation.
+
+**Next steps:**
+I need to rewrite the extraction block, add a new unit test for plain text extraction, and ensure my new tests pass locally before opening the PR.
+
+**Blockers:**
+None.
+
+### Check-in 2 (end of week)
+**PR link:** https://github.com/ascherj/pathreview/pull/933
+**Branch:** fix/148-skill-extractor-js-ts
+**What you built:**
+I updated the keyword mapping inside the skill extractor to explicitly parse and separate "JavaScript" and "TypeScript" using regex word boundaries. This ensures the pipeline correctly flags these two languages when parsing raw resume text, resolving the silent omission bug.
+**Tests added or updated:**
+Added `test_javascript_and_typescript_extraction` inside `tests/unit/test_skill_extractor.py`. This test covers standard plain-text extraction to ensure the parser catches the languages without breaking existing functionality.
+**Self-review confirmation:** [X] make check passes [X] make test-unit passes
+**Draft PR feedback received from:** none
